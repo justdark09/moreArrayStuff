@@ -68,6 +68,7 @@ public class Main
     public static void secondLarge(int[] a) {
         int current = a[0];
         int max = 0;
+
         for (int i = 0; i < a.length; i++) {
             //gets max number in array
             if (max < a[i]) {
@@ -75,16 +76,15 @@ public class Main
                 current = i;
             }
         }
-        a[current] = 0;
         max = 0;
         for (int i = 0; i < a.length; i++) {
-            if (max < a[i]) {
+            if (max != a[current] && i != current) {
                 max = a[i];
             }
         }
+
+
         System.out.println(max);
-        // resets array to default
-        a[current] = 10;
     }
 
     public static int[] reverseArr(int[] a) {
